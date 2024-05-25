@@ -16,7 +16,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1.1.3
         id: cleanBuildozer
         with:
-          command: buildozer appClean
+          command: buildozer appclean
           buildozer_version: master
 
       - name: Build with Buildozer
