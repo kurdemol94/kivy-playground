@@ -25,14 +25,14 @@ jobs:
         id: buildozerClean
         with:
           command: buildozer android clean
-          buildozer_version: develop
+          buildozer_version: master
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozerBuild
         with:
           command: echo y | buildozer android debug
-          buildozer_version: develop
+          buildozer_version: master
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
