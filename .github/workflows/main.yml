@@ -22,14 +22,14 @@ jobs:
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
+        id: buildozerClean
         with:
           command: buildozer android clean
           buildozer_version: develop
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
+        id: buildozerBuild
         with:
           command: echo y | buildozer android debug
           buildozer_version: develop
