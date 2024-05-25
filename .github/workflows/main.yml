@@ -19,9 +19,6 @@ jobs:
           command: buildozer appclean
           buildozer_version: master
 
-      - name: Clean secret management files
-        run: rm -f ~/.buildozer
-
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1.1.3
         id: buildozerBuild
