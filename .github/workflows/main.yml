@@ -22,6 +22,9 @@ jobs:
         with:
           path: .buildozer_global
           key: buildozer-global-${{ hashFiles('buildozer.spec') }}
+      
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
 
       - uses: actions/cache@v2
         with:
