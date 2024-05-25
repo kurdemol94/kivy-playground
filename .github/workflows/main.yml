@@ -22,26 +22,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: master
-
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1.1.3
-        id: buildozerclean
-        with:
-          command: buildozer appclean
-          buildozer_version: master
-
-      - name: 'Cleanup build folder'
-        run: |
-          ls -la ./
-          rm -rf ./* || true
-          rm -rf ./.??* || true
-          ls -la ./
-         
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.10'
-          architecture: x64
          
       - name: Install dependencies
         run: |
