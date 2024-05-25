@@ -72,14 +72,4 @@ jobs:
         if: github.event_name == 'push'
         run: python master/.ci/move_binary.py "${{ steps.buildozer.outputs.filename }}" master data bin
 
-name: CI
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
 
