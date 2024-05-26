@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
-        
+
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
         with:
@@ -32,7 +32,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: buildozer android debug
+          command: pip3 install --user --upgrade Cython==0.29.33 virtualenv; buildozer android debug
           buildozer_version: stable
 
       - name: Upload artifacts
