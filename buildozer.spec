@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = MCB app
+title = mcbapp
 
 # (str) Package name
 package.name = mcbapp
