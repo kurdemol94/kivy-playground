@@ -10,6 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      steps:
+        - uses: actions/checkout@v1
+        - uses: AdoptOpenJDK/install-jdk@v1
+          with:
+            version: '17'
+            architecture: x64
+
       #used to cache dependencies with a timeout
       - name: Get Date
         id: get-date
@@ -32,7 +39,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/; pip3 install --upgrade Cython==0.29.33 virtualenv; buildozer android debug
+          command: apt install -y git zip unzip python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; pip3 install --upgrade Cython==0.29.33 virtualenv; buildozer android debug
           buildozer_version: stable
 
       - name: Upload artifacts
