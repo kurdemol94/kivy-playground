@@ -16,21 +16,7 @@ jobs:
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
-
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1.1.3
-        id: buildozerclean
-        with:
-          command: buildozer appclean
-          buildozer_version: master
-
-      - name: 'Cleanup build folder'
-        run: |
-          ls -la ./
-          rm -rf ./* || true
-          rm -rf ./.??* || true
-          ls -la ./
-
+        
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
         with:
