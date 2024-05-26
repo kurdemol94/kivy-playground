@@ -32,7 +32,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: apt install -y git zip unzip openjdk-8-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; pip3 install --upgrade Cython==0.29.33 virtualenv; buildozer android debug
+          command: apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/; pip3 install --upgrade Cython==0.29.33 virtualenv; buildozer android debug
           buildozer_version: stable
 
       - name: Upload artifacts
