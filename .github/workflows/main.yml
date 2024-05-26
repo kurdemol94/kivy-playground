@@ -12,8 +12,8 @@ jobs:
 
       - uses: AdoptOpenJDK/install-jdk@v1
         with:
-        version: '17'
-        architecture: x64
+          version: '17'
+          architecture: x64
 
       #used to cache dependencies with a timeout
       - name: Get Date
