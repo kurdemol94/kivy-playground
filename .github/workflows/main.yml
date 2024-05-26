@@ -10,6 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up JDK 
+        uses: actions/setup-java@v2 
+        with: 
+          java-version: '17' 
+          distribution: 'temurin'
+
       - name: install dependencies
         run: pip3 install --upgrade Cython==0.29.33 virtualenv;
 
