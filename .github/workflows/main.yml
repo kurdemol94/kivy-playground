@@ -28,11 +28,17 @@ jobs:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
 
+      - name: install dependencies
+        run: apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; pip3 install --upgrade Cython==0.29.33 virtualenv;
+
+      - name: Check default Java version
+        run: java -version
+        
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake; pip3 install --upgrade Cython==0.29.33 virtualenv; buildozer android debug
+          command: buildozer android debug
           buildozer_version: stable
 
       - name: Upload artifacts
